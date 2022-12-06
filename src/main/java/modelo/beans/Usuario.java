@@ -2,18 +2,19 @@
 package modelo.beans;
 
 
+import java.util.Date;
 import javax.swing.JTextField;
 
 public class Usuario {
 
 	private String NumeroIdentificacion;
 	private String Nombre;
-	private String FechaNacimiento;
+	private Date FechaNacimiento;
 	private String CorreoElectronico;
 	private String Genero;
 	private String Contrasenia;
 
-    public Usuario(String NumeroIdentificacion, String Nombre, String FechaNacimiento, String CorreoElectronico, String Genero, String Contrasenia) {
+    public Usuario(String NumeroIdentificacion, String Nombre, Date FechaNacimiento, String CorreoElectronico, String Genero, String Contrasenia) {
         this.NumeroIdentificacion = NumeroIdentificacion;
         this.Nombre = Nombre;
         this.FechaNacimiento = FechaNacimiento;
@@ -38,11 +39,11 @@ public class Usuario {
         this.Nombre = Nombre;
     }
 
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return FechaNacimiento;
     }
 
-    public void setFechaNacimiento(String FechaNacimiento) {
+    public void setFechaNacimiento(Date FechaNacimiento) {
         this.FechaNacimiento = FechaNacimiento;
     }
 

@@ -1,22 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
+
 package vistas;
 
 import javax.swing.JOptionPane;
 import modelo.beans.Usuario;
 import modelo.logic.UsuarioLog;
 
-/**
- *
- * @author camil
- */
 public class FormRegistrarUsuario extends javax.swing.JDialog {
 
-    /**
-     * Creates new form RegistrarUsuario
-     */
     public FormRegistrarUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -42,12 +32,12 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
         txtIdentificacion = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        txtFechadeNacimiento = new javax.swing.JTextField();
         cmbGenero = new javax.swing.JComboBox<>();
         txtContraseña = new javax.swing.JPasswordField();
         btnRegistrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        DateFechaNacimiento = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,7 +48,7 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
         jLabel2.setText("Identificacion:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Nombre:");
+        jLabel3.setText("Nombre/Usuario:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Correo:");
@@ -77,8 +67,6 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        txtFechadeNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         cmbGenero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Indefinido", "Maculino", "Femenino", "AH-64" }));
@@ -129,11 +117,15 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel2)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel3)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtIdentificacion)
@@ -146,16 +138,17 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtContraseña)
-                                        .addComponent(txtFechadeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                    .addComponent(txtContraseña)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(DateFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -174,14 +167,14 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
                     .addComponent(jLabel5)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtFechadeNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(DateFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(cmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnModificar)
@@ -196,10 +189,9 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
         if (!txtIdentificacion.getText().isEmpty()&&
                 !txtNombre.getText().isEmpty()&&
                 !txtCorreo.getText().isEmpty()&&
-                !txtContraseña.getText().isEmpty()&&
-                !txtFechadeNacimiento.getText().isEmpty()&&
+                !txtContraseña.getText().isEmpty()&&              
                 !cmbGenero.getItemAt(WIDTH).isEmpty()){
-            Usuario usuario = new Usuario(txtIdentificacion.getText(),txtNombre.getText(),txtFechadeNacimiento.getText(),
+            Usuario usuario = new Usuario(txtIdentificacion.getText(),txtNombre.getText(),DateFechaNacimiento.getDate(),
             txtCorreo.getText(),cmbGenero.getItemAt(WIDTH),txtContraseña.getText());
             if(UsuarioLog.insertar(usuario)){
                 JOptionPane.showMessageDialog(this,"Usuario registrado exitosamente");
@@ -214,9 +206,8 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
                 !txtNombre.getText().isEmpty()&&
                 !txtCorreo.getText().isEmpty()&&
                 !txtContraseña.getText().isEmpty()&&
-                !txtFechadeNacimiento.getText().isEmpty()&&
                 !cmbGenero.getItemAt(WIDTH).isEmpty()){
-            Usuario usuario = new Usuario(txtIdentificacion.getText(),txtNombre.getText(),txtFechadeNacimiento.getText(),
+            Usuario usuario = new Usuario(txtIdentificacion.getText(),txtNombre.getText(),DateFechaNacimiento.getDate(),
             txtCorreo.getText(),cmbGenero.getItemAt(WIDTH),txtContraseña.getText());
             if(UsuarioLog.modificar(usuario)){
                 JOptionPane.showMessageDialog(this,"Usuario modificado exitosamente");
@@ -281,6 +272,7 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DateFechaNacimiento;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
@@ -294,7 +286,6 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtFechadeNacimiento;
     private javax.swing.JTextField txtIdentificacion;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
