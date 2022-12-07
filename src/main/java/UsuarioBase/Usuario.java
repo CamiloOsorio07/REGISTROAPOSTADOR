@@ -1,5 +1,5 @@
 
-package modelo.beans;
+package UsuarioBase;
 
 
 import java.util.Date;

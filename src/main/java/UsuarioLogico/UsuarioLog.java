@@ -1,8 +1,8 @@
 
-package modelo.logic;
+package UsuarioLogico;
 
-import modelo.beans.Usuario;
-import modelo.dao.UsuarioRG;
+import UsuarioBase.Usuario;
+import UsuarioBlog.UsuarioRG;
 
 public class UsuarioLog {
     

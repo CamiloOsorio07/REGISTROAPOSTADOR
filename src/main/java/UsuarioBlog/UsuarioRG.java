@@ -1,9 +1,9 @@
 
-package modelo.dao;
+package UsuarioBlog;
 
 import java.util.ArrayList;
 import java.util.List;
-import modelo.beans.Usuario;
+import UsuarioBase.Usuario;
 
 
 public class UsuarioRG {

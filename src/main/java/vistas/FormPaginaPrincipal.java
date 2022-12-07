@@ -1,7 +1,7 @@
 
 package vistas;
 
-import modelo.beans.Usuario;
+import UsuarioBase.Usuario;
 
 public class FormPaginaPrincipal extends javax.swing.JFrame {
 

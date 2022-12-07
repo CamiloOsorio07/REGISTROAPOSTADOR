@@ -1,9 +1,9 @@
-
 package vistas;
 
 import javax.swing.JOptionPane;
-import modelo.beans.Usuario;
-import modelo.logic.UsuarioLog;
+import UsuarioBase.Usuario;
+import UsuarioLogico.UsuarioLog;
+import java.util.Date;
 
 public class FormRegistrarUsuario extends javax.swing.JDialog {
 
@@ -186,6 +186,10 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Date date = DateFechaNacimiento.getDate(); 
+        if (date == null) {
+      JOptionPane.showMessageDialog(this, "Faltan datos");
+    }
         if (!txtIdentificacion.getText().isEmpty()&&
                 !txtNombre.getText().isEmpty()&&
                 !txtCorreo.getText().isEmpty()&&
@@ -202,6 +206,10 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        Date date = DateFechaNacimiento.getDate(); 
+        if (date == null) {
+      JOptionPane.showMessageDialog(this, "Faltan datos");
+    }
         if (!txtIdentificacion.getText().isEmpty()&&
                 !txtNombre.getText().isEmpty()&&
                 !txtCorreo.getText().isEmpty()&&
@@ -218,6 +226,10 @@ public class FormRegistrarUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Date date = DateFechaNacimiento.getDate(); 
+        if (date == null) {
+      JOptionPane.showMessageDialog(this, "Faltan datos");
+    }
         if (!txtNombre.getText().isEmpty()){
             
             if(UsuarioLog.eliminar(txtNombre.getText())){
